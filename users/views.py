@@ -4,6 +4,11 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterUserForm
 from .models import User
 
+#Home_page
+def home_page(request):
+
+    return render(request, "homepage.html")
+
 # Register Student
 def register_student(request):
     if request.method == 'POST':

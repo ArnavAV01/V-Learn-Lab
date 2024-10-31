@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'VLab_db',
         'USER': 'postgres',
-        'PASSWORD': '0815',
+        'PASSWORD': '556871',
         'HOST': 'localhost',
         'PORT': '5432'
     }
