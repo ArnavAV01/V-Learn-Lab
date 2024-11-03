@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'widget_tweaks',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +78,12 @@ WSGI_APPLICATION = 'VLAB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'VLab_db',
-        'USER': 'postgres',
-        'PASSWORD': '0815',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.postgresql',      # Engine
+        'NAME': 'VLab_db',      # Database Name
+        'USER': 'postgres',     # owner
+        'PASSWORD': '0815',     # password 
+        'HOST': 'localhost',    # host
+        'PORT': '5432'          # port
     }
 }
 

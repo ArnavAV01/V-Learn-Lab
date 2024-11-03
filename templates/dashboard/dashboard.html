@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+
+    <!-- For Student Users -->
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_student %}
+    <!-- Student Dashboard Header -->
+    <section class="p-5 mb-4 bg-light rounded-3 shadow-sm">
+        <div class="container-fluid py-3">
+            <h1 class="display-5 fw-bold">Welcome to the Virtual Learning Lab, {{ request.user.first_name }}!</h1>
+            <p class="fs-4 text-muted">Student Dashboard</p>
+        </div>
+    </section>
+
+    <!-- Student Actions Panel -->
+    <div class="row g-4">
+        <!-- Access Learning Resources -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-book fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">Learning Resources</h5>
+                    <p class="card-text">Access course materials, videos, and e-books.</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">View Resources</a>       
+                </div>
+            </div>
+        </div>
+        <!-- View Assignments -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-tasks fa-3x mb-3 text-success"></i>
+                    <h5 class="card-title">Assignments</h5>
+                    <p class="card-text">Check upcoming assignments and deadlines.</p>
+                    <a href="#" class="btn btn-outline-success btn-sm">View Assignments</a>     
+                </div>
+            </div>
+        </div>
+        <!-- Announcements -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-bullhorn fa-3x mb-3 text-warning"></i>
+                    <h5 class="card-title">Announcements</h5>
+                    <p class="card-text">Stay updated with the latest announcements.</p>
+                    <a href="#" class="btn btn-outline-warning btn-sm">View Announcements</a>       
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% elif request.user.is_faculty %}
+    <!-- Faculty Dashboard Header -->
+    <section class="p-5 mb-4 bg-light rounded-3 shadow-sm">
+        <div class="container-fluid py-3">
+            <h1 class="display-5 fw-bold">Welcome to the Virtual Learning Lab, {{ request.user.first_name }}!</h1>
+            <p class="fs-4 text-muted">Faculty Dashboard</p>
+        </div>
+    </section>
+
+    <!-- Faculty Actions Panel -->
+    <div class="row g-4">
+        <!-- Manage Learning Resources -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-book-open fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title">Manage Resources</h5>
+                    <p class="card-text">Upload and manage course materials.</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Manage Resources</a>     
+                </div>
+            </div>
+        </div>
+        <!-- Post Announcements -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-bullhorn fa-3x mb-3 text-danger"></i>
+                    <h5 class="card-title">Post Announcements</h5>
+                    <p class="card-text">Keep students informed with the latest updates.</p>
+                    <a href="#" class="btn btn-outline-danger btn-sm">Post Announcement</a>         
+                </div>
+            </div>
+        </div>
+        <!-- Track Student Progress -->
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-chart-line fa-3x mb-3 text-success"></i>
+                    <h5 class="card-title">Student Progress</h5>
+                    <p class="card-text">Review and monitor student progress.</p>
+                    <a href="#" class="btn btn-outline-success btn-sm">Track Progress</a>        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% endif %}
+</div>
+{% endblock content %}
