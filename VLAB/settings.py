@@ -79,12 +79,19 @@ WSGI_APPLICATION = 'VLAB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',      # Engine
-        'NAME': 'VLab_db',      # Database Name
-        'USER': 'postgres',     # owner
-        'PASSWORD': '0815',     # password 
-        'HOST': 'localhost',    # host
-        'PORT': '5432'          # port
+#         'ENGINE': 'django.db.backends.postgresql',      # Engine
+#         'NAME': 'VLab_db',      # Database Name
+#         'USER': 'postgres',     # owner
+#         'PASSWORD': '0815',     # password 
+#         'HOST': 'localhost',    # host
+#         'PORT': '5432'          # port
+=======
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'VLab_db',
+        'USER': 'postgres',
+        'PASSWORD': '556871',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
