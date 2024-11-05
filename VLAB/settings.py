@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'widget_tweaks',
+    'dashboard',
+    'student',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +79,13 @@ WSGI_APPLICATION = 'VLAB.wsgi.application'
 
 DATABASES = {
     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',      # Engine
+#         'NAME': 'VLab_db',      # Database Name
+#         'USER': 'postgres',     # owner
+#         'PASSWORD': '0815',     # password 
+#         'HOST': 'localhost',    # host
+#         'PORT': '5432'          # port
+=======
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'VLab_db',
         'USER': 'postgres',
@@ -121,7 +130,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Your global static folder
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
