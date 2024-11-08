@@ -38,15 +38,16 @@ def register_faculty(request):
             faculty.save()
             messages.success(request, 'Faculty account has been created successfully.')
             return redirect('login')
+    
         else:
             messages.error(request, 'Error creating faculty account. Please check the form for issues.')
     else:
         form = RegisterUserForm()
-    
     return render(request, 'users/register_faculty.html', {'form': form})
 
     
 # Login a User
+# @sensitive_variables("jwt")    To do: Use Jwt for authorization
 def login_user(request):
     if request.method == 'POST':
         enrollment = request.POST.get('enrollment_no')
