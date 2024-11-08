@@ -4,8 +4,10 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterUserForm
 from .models import User
 
+# Home Page
 def homepage(requests):
     return render(requests,'base.html')
+
 
 # Register Student
 def register_student(request):
